@@ -1,9 +1,8 @@
 namespace Spaceflight.Models;
 
-public class Article
+public class Blog
 {
     public int Id { get; set; }
-    public bool Featured { get; set; }
     public string? Title { get; set; }
     public string? Url { get; set; }
     public string? ImageUrl { get; set; }
@@ -13,3 +12,4 @@ public class Article
     private List<Launch> Launches { get; set; } = [];
     private List<Event> Events { get; set; } = [];
 }
+
