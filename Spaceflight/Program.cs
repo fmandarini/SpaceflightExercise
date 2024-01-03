@@ -6,7 +6,6 @@
  4. (Bonus) Creare degli overload asyncEnumerable dei metodi di SpaceFlightAPIClient
  */
 
-using System.Reflection;
 using Spaceflight;
 using Spaceflight.Models;
 

@@ -10,6 +10,6 @@ public class Article : IEntity
     public string? NewsSite { get; set; }
     public string? Summary { get; set; }
     public string? PublishedAt { get; set; }
-    private List<Launch> Launches { get; set; } = []; 
+    private List<Launch> Launches { get; set; } = [];
     private List<Event> Events { get; set; } = [];
 }

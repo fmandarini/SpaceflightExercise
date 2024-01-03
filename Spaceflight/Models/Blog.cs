@@ -12,4 +12,3 @@ public class Blog : IEntity
     private List<Launch> Launches { get; set; } = [];
     private List<Event> Events { get; set; } = [];
 }
-

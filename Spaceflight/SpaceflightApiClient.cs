@@ -5,7 +5,7 @@ namespace Spaceflight;
 
 public class SpaceflightApiClient(HttpClient httpClient)
 {
-    public async Task<List<T>?> GetAsync<T>(string path) where T: class, IEntity
+    public async Task<List<T>?> GetAsync<T>(string path) where T : class, IEntity
     {
         var httpResponseMessage = await httpClient.GetAsync(path);
         if (httpResponseMessage.IsSuccessStatusCode)
