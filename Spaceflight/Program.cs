@@ -6,34 +6,29 @@
  4. (Bonus) Creare degli overload asyncEnumerable dei metodi di SpaceFlightAPIClient
  */
 
-using System.Net.Http.Json;
 using Spaceflight;
 using Spaceflight.Models;
 
-var http = new HttpClient();
+var spaceflightClient = new SpaceflightApiClient(new HttpClient());
+
 await using var articlesWriter =
     new FileWriter("/Users/Francesco/Documents/Ellycode/Spaceflight/Spaceflight/Articles.txt");
-
 for (var i = 0; i < 10; i++)
 {
     Console.Write($"Request articles N.{i + 1}\t");
-    var httpResponseArticles = await http
-        .GetAsync($"https://api.spaceflightnewsapi.net/v3/articles?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
-    if (httpResponseArticles.IsSuccessStatusCode)
+    var articles = await spaceflightClient
+        .GetAsync<Article>(
+            $"https://api.spaceflightnewsapi.net/v3/articles?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
+    if (articles is not null)
     {
-        Console.WriteLine("Server has responded for articles");
-        var articles = await httpResponseArticles.Content.ReadFromJsonAsync<List<Article>>();
-        if (articles is not null)
+        foreach (var article in articles)
         {
-            foreach (var article in articles)
-            {
-                await articlesWriter.WriteAsync(article);
-            }
+            await articlesWriter.WriteAsync(article);
         }
     }
     else
     {
-        Console.WriteLine("Server has not responded for articles");
+        throw new NullReferenceException("No items were returned");
     }
 }
 
@@ -42,22 +37,17 @@ await using var blogsWriter =
 for (var i = 0; i < 10; i++)
 {
     Console.Write($"Request blogs N.{i + 1}\t");
-    var httpResponseBlogs = await http
-        .GetAsync($"https://api.spaceflightnewsapi.net/v3/blogs?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
-    if (httpResponseBlogs.IsSuccessStatusCode)
+    var blogs = await spaceflightClient
+        .GetAsync<Blog>($"https://api.spaceflightnewsapi.net/v3/blogs?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
+    if (blogs is not null)
     {
-        Console.WriteLine("Server has responded for blogs");
-        var blogs = await httpResponseBlogs.Content.ReadFromJsonAsync<List<Blog>>();
-        if (blogs is not null)
+        foreach (var blog in blogs)
         {
-            foreach (var blog in blogs)
-            {
-                await blogsWriter.WriteAsync(blog);
-            }
+            await blogsWriter.WriteAsync(blog);
         }
     }
     else
     {
-        Console.WriteLine("Server has not responded for blogs");
+        throw new NullReferenceException("No items were returned");
     }
 }

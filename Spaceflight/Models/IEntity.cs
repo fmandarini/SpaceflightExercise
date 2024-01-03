@@ -9,6 +9,4 @@ public interface IEntity
     public string? NewsSite { get; set; }
     public string? Summary { get; set; }
     public string? PublishedAt { get; set; }
-    // public List<Launch> Launches { get; set; }
-    // public List<Event> Events { get; set; }
 }
