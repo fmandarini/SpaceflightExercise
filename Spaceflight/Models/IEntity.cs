@@ -1,6 +1,6 @@
 namespace Spaceflight.Models;
 
-public class Blog : IEntity
+public interface IEntity
 {
     public int Id { get; set; }
     public string? Title { get; set; }
@@ -9,7 +9,6 @@ public class Blog : IEntity
     public string? NewsSite { get; set; }
     public string? Summary { get; set; }
     public string? PublishedAt { get; set; }
-    // public List<Launch> Launches { get; set; } = [];
-    // public List<Event> Events { get; set; } = [];
+    // public List<Launch> Launches { get; set; }
+    // public List<Event> Events { get; set; }
 }
-

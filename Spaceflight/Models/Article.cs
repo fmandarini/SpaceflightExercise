@@ -1,6 +1,6 @@
 namespace Spaceflight.Models;
 
-public class Article
+public class Article : IEntity
 {
     public int Id { get; set; }
     public bool Featured { get; set; }
@@ -10,6 +10,6 @@ public class Article
     public string? NewsSite { get; set; }
     public string? Summary { get; set; }
     public string? PublishedAt { get; set; }
-    private List<Launch> Launches { get; set; } = [];
-    private List<Event> Events { get; set; } = [];
+    // public List<Launch> Launches { get; set; } = [];
+    // public List<Event> Events { get; set; } = [];
 }

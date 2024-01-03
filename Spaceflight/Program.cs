@@ -1,14 +1,18 @@
-﻿/* TODO - Code changing
- 1. Read 100 most recent articles (read 10 at time)
- 2. Write articles in a file (id | title | publicationDate (GG/MM/YYYY) )
+﻿/* TODO - Per domani
+ 1. Rendere la casse file writer generica
+ 2. Spostare i metodi per la lettura di articoli e blog in una
+    nuova classe SpaceFlightAPIClient
+ 3. Rendere i path relativi
+ 4. (Bonus) Creare degli overload asyncEnumerable dei metodi di SpaceFlightAPIClient
  */
 
 using System.Net.Http.Json;
+using Spaceflight;
 using Spaceflight.Models;
 
 var http = new HttpClient();
-await using var streamWriterArticles =
-    new StreamWriter("/Users/Francesco/Documents/Ellycode/Spaceflight/Spaceflight/Articles.txt");
+await using var articlesWriter =
+    new FileWriter("/Users/Francesco/Documents/Ellycode/Spaceflight/Spaceflight/Articles.txt");
 
 for (var i = 0; i < 10; i++)
 {
@@ -23,11 +27,7 @@ for (var i = 0; i < 10; i++)
         {
             foreach (var article in articles)
             {
-                var publishedAt = article.PublishedAt is null
-                    ? ""
-                    : DateTime.Parse(article.PublishedAt).ToString("dd/MM/yyyy");
-                await streamWriterArticles.WriteLineAsync(
-                    $"{article.Id} | {article.Title} | {publishedAt}");
+                await articlesWriter.WriteAsync(article);
             }
         }
     }
@@ -37,8 +37,8 @@ for (var i = 0; i < 10; i++)
     }
 }
 
-await using var streamWriterBlogs =
-    new StreamWriter("/Users/Francesco/Documents/Ellycode/Spaceflight/Spaceflight/Blogs.txt");
+await using var blogsWriter =
+    new FileWriter("/Users/Francesco/Documents/Ellycode/Spaceflight/Spaceflight/Blogs.txt");
 for (var i = 0; i < 10; i++)
 {
     Console.Write($"Request blogs N.{i + 1}\t");
@@ -52,11 +52,7 @@ for (var i = 0; i < 10; i++)
         {
             foreach (var blog in blogs)
             {
-                var publishedAt = blog.PublishedAt is null
-                    ? ""
-                    : DateTime.Parse(blog.PublishedAt).ToString("dd/MM/yyyy");
-                await streamWriterBlogs.WriteLineAsync(
-                    $"{blog.Id} | {blog.Title} | {publishedAt}");
+                await blogsWriter.WriteAsync(blog);
             }
         }
     }
