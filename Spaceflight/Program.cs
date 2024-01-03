@@ -6,10 +6,12 @@
  4. (Bonus) Creare degli overload asyncEnumerable dei metodi di SpaceFlightAPIClient
  */
 
+using System.Reflection;
 using Spaceflight;
 using Spaceflight.Models;
 
-var projectDirectory = Directory.GetParent(Environment.CurrentDirectory)!.Parent!.Parent!.FullName;
+var projectDirectory = Directory.GetParent(Assembly.GetExecutingAssembly().Location)!
+    .Parent!.Parent!.Parent!.FullName;
 var articlesFilePath = Path.Combine(projectDirectory, "Articles.txt");
 var blogsFilePath = Path.Combine(projectDirectory, "Blogs.txt");
 
