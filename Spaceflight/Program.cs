@@ -6,13 +6,18 @@
  4. (Bonus) Creare degli overload asyncEnumerable dei metodi di SpaceFlightAPIClient
  */
 
+using System.Reflection;
 using Spaceflight;
 using Spaceflight.Models;
+
+var projectDirectory = Directory.GetParent(Environment.CurrentDirectory)!.Parent!.Parent!.FullName;
+var articlesFilePath = Path.Combine(projectDirectory, "Articles.txt");
+var blogsFilePath = Path.Combine(projectDirectory, "Blogs.txt");
 
 var spaceflightClient = new SpaceflightApiClient(new HttpClient());
 
 await using var articlesWriter =
-    new FileWriter("/Users/Francesco/Documents/Ellycode/Spaceflight/Spaceflight/Articles.txt");
+    new FileWriter(articlesFilePath);
 for (var i = 0; i < 10; i++)
 {
     Console.Write($"Request articles N.{i + 1}\t");
@@ -33,12 +38,13 @@ for (var i = 0; i < 10; i++)
 }
 
 await using var blogsWriter =
-    new FileWriter("/Users/Francesco/Documents/Ellycode/Spaceflight/Spaceflight/Blogs.txt");
+    new FileWriter(blogsFilePath);
 for (var i = 0; i < 10; i++)
 {
     Console.Write($"Request blogs N.{i + 1}\t");
     var blogs = await spaceflightClient
-        .GetAsync<Blog>($"https://api.spaceflightnewsapi.net/v3/blogs?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
+        .GetAsync<Blog>(
+            $"https://api.spaceflightnewsapi.net/v3/blogs?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
     if (blogs is not null)
     {
         foreach (var blog in blogs)
