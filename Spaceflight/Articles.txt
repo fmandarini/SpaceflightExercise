@@ -1,3 +1,5 @@
+22004 | Space Force wargames potential satellite refueling plans | 04/01/2024
+22003 | Space Force seeking a digital overhaul of its aging launch infrastructure | 04/01/2024
 22001 | Daily Telescope: A view of our star as Earth reaches perihelion | 04/01/2024
 22000 | National Labor Relations Board issues complaint over SpaceX employee firings | 04/01/2024
 22002 | Maxar wins contract to provide 3D imagery of Indo-Pacific region | 04/01/2024
@@ -96,5 +98,3 @@
 21895 | Daily Telescope: James Webb zooms in on Uranus | 19/12/2023
 21894 | SpaceX to just miss goal of 100 Falcon launches in 2023 | 19/12/2023
 21893 | Latitude Announces New Variant of its Zephyr Launch Vehicle | 19/12/2023
-21892 | D-Orbit ION Space Tug Hosts In-Orbit Refueling Demo | 19/12/2023
-21889 | After raising $9.5 million, startup OurSky sees strong demand for space data platform | 19/12/2023

@@ -7,7 +7,7 @@
  */
 
 /* TODO - Ulteriori modifiche
- 1. Togliere la logia di paginazione dal metodo getArticlesAsync;
+ 1. Togliere la logica di paginazione dal metodo getArticlesAsync;
  2. Far si che il metodo getArticlesAsync accetti come parametro il
     numero di elementi da restuire;
  3. Utilizzare il baseAddress e utilizzare le costanti (Numero elementi per pagina);
@@ -24,34 +24,19 @@ var projectDirectory = Directory.GetParent(Assembly.GetExecutingAssembly().Locat
 var articlesFilePath = Path.Combine(projectDirectory, "Articles.txt");
 var blogsFilePath = Path.Combine(projectDirectory, "Blogs.txt");
 
-var spaceflightClient = new SpaceflightApiClient(new HttpClient());
+using var http = new HttpClient();
+var spaceflightClient = new SpaceflightApiClient(http);
 
-await using var articlesWriter =
-    new FileWriter(articlesFilePath);
-
-var articles = await spaceflightClient.GetArticlesAsync();
+await using var articlesWriter = new FileWriter(articlesFilePath);
+var articles = await spaceflightClient.GetArticlesAsync(100);
 foreach (var article in articles)
 {
     await articlesWriter.WriteAsync(article);
 }
 
-// await using var blogsWriter =
-//     new FileWriter(blogsFilePath);
-// for (var i = 0; i < 10; i++)
-// {
-//     Console.Write($"Request blogs N.{i + 1}\t");
-//     var blogs = await spaceflightClient
-//         .GetAsync<Blog>(
-//             $"https://api.spaceflightnewsapi.net/v3/blogs?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
-//     if (blogs is not null)
-//     {
-//         foreach (var blog in blogs)
-//         {
-//             await blogsWriter.WriteAsync(blog);
-//         }
-//     }
-//     else
-//     {
-//         throw new NullReferenceException("No items were returned");
-//     }
-// }
+await using var blogsWriter = new FileWriter(blogsFilePath);
+var blogs = await spaceflightClient.GetBlogsAsync(100);
+foreach (var blog in blogs)
+{
+    await blogsWriter.WriteAsync(blog);
+}

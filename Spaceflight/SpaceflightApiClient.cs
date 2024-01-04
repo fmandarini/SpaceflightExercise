@@ -5,9 +5,22 @@ namespace Spaceflight;
 
 public class SpaceflightApiClient(HttpClient httpClient)
 {
-    private async Task<List<T>?> GetAsync<T>(string path) where T : IEntity
+    private const int ElementsPerPage = 10;
+    private static readonly Uri BaseAddress = new UriBuilder("https://api.spaceflightnewsapi.net/v3").Uri;
+
+    public async Task<List<Article>> GetArticlesAsync(int totalArticles)
     {
-        var httpResponseMessage = await httpClient.GetAsync(path);
+        return await GetWithPaginationAsync<Article>(totalArticles);
+    }
+
+    public async Task<List<Blog>> GetBlogsAsync(int totalBlogs)
+    {
+        return await GetWithPaginationAsync<Blog>(totalBlogs);
+    }
+
+    private async Task<List<T>?> GetAsync<T>(Uri uri) where T : IEntity
+    {
+        var httpResponseMessage = await httpClient.GetAsync(uri);
         if (httpResponseMessage.IsSuccessStatusCode)
         {
             Console.WriteLine($"Server has responded for {typeof(T).Name}");
@@ -18,18 +31,26 @@ public class SpaceflightApiClient(HttpClient httpClient)
         return null;
     }
 
-    public async Task<List<Article>> GetArticlesAsync()
+    private async Task<List<T>> GetWithPaginationAsync<T>(int total) where T : IEntity
     {
-        var result = new List<Article>();
-        for (var i = 0; i < 10; i++)
+        var result = new List<T>();
+        var numberOfPages = Math.Ceiling((double)total / ElementsPerPage);
+        var itemsType = typeof(T).Name.ToLower() + "s";
+        for (var currentPage = 1; currentPage <= numberOfPages; currentPage++)
         {
-            Console.Write($"Request articles N.{i + 1}\t");
-            var articles =
-                await GetAsync<Article>(
-                    $"https://api.spaceflightnewsapi.net/v3/articles?_limit=10&_sort=publishedAt:desc&_start={i * 10}");
-            if (articles is not null)
+            // if (currentPage == numberOfPages)
+            // {
+            //     _elementsPerPage = total - result.Count;
+            // }
+            Console.Write($"Request {typeof(T).Name} page: {currentPage}\t\t");
+            var skip = (currentPage - 1) * ElementsPerPage;
+            var elementsToRequest = Math.Min(ElementsPerPage, total - skip);
+            var uri = new Uri(
+                $"{BaseAddress}/{itemsType}?_limit={elementsToRequest}&_sort=publishedAt:desc&_start={skip}");
+            var items = await GetAsync<T>(uri);
+            if (items is not null)
             {
-                result.AddRange(articles);
+                result.AddRange(items);
             }
             else
             {
