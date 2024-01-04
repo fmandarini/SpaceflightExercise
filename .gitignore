@@ -1,2 +1,5 @@
 /.idea/.idea.Spaceflight/.idea/encodings.xml
 .DS_Store
+bin/
+obj/
+
