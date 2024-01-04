@@ -6,7 +6,7 @@ public class FileWriter(string path) : IDisposable, IAsyncDisposable
 {
     private readonly StreamWriter _writer = new(path);
 
-    public async Task WriteAsync<T>(T entity) where T : class, IEntity
+    public async Task WriteAsync<T>(T entity) where T : IEntity
     {
         var publishedAt = entity.PublishedAt is null
             ? ""

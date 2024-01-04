@@ -1,3 +1,11 @@
+22001 | Daily Telescope: A view of our star as Earth reaches perihelion | 04/01/2024
+22000 | National Labor Relations Board issues complaint over SpaceX employee firings | 04/01/2024
+22002 | Maxar wins contract to provide 3D imagery of Indo-Pacific region | 04/01/2024
+21999 | SpaceX launches Ovzon’s debut broadband satellite | 04/01/2024
+21998 | Progress Made at SaxaVord, but Questions Remain | 04/01/2024
+21997 | Bumpy Road Ahead for the Remainder of the 118th Congress | 04/01/2024
+21996 | Ingenuity lessons being incorporated into Mars Sample Return | 04/01/2024
+21995 | ULA Ready for Inaugural Vulcan Flight | 03/01/2024
 21994 | More Than Just LEO: A Framework for SPD-8 and Space Critical Infrastructure | 03/01/2024
 21993 | SUAS Aerospace Aims to Launch Orbital Flights from Ireland | 03/01/2024
 21992 | SpaceX deploys direct-to-smartphone satellites in first launch of 2024 | 03/01/2024
@@ -90,11 +98,3 @@
 21893 | Latitude Announces New Variant of its Zephyr Launch Vehicle | 19/12/2023
 21892 | D-Orbit ION Space Tug Hosts In-Orbit Refueling Demo | 19/12/2023
 21889 | After raising $9.5 million, startup OurSky sees strong demand for space data platform | 19/12/2023
-21888 | New Shepard return to flight slips one day | 19/12/2023
-21887 | Lynk Global plans to go public to fund direct-to-smartphone satellites | 18/12/2023
-21886 | Report: Hypersonic weapons challenge Pentagon tracking capabilities | 18/12/2023
-21885 | Spain’s new space agency is a bigger deal than it seems | 18/12/2023
-21883 | Satellite navigation startup TrustPoint announces partnership with SpiderOak | 18/12/2023
-21882 | HawkEye 360 acquires Maxar’s RF Solutions business unit | 18/12/2023
-21881 | Daily Telescope: Tracking the Sun’s path every day across the sky | 18/12/2023
-21880 | Space Force’s first six missile-defense satellites in medium orbit to cost about $500 million | 18/12/2023
