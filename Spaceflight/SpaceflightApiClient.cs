@@ -26,14 +26,14 @@ public class SpaceflightApiClient
     private async Task<List<T>?> GetAsync<T>(string uri) where T : IEntity
     {
         var httpResponseMessage = await _httpClient.GetAsync(uri);
-        if (httpResponseMessage.IsSuccessStatusCode)
+        if (!httpResponseMessage.IsSuccessStatusCode)
         {
-            Console.WriteLine($"Server has responded for {typeof(T).Name}");
-            return await httpResponseMessage.Content.ReadFromJsonAsync<List<T>?>();
+            Console.WriteLine($"Server has not responded for {uri}");
+            return null;
         }
 
-        Console.WriteLine($"Server has not responded for {typeof(T).Name}");
-        return null;
+        Console.WriteLine($"Server has responded for {uri}");
+        return await httpResponseMessage.Content.ReadFromJsonAsync<List<T>?>();
     }
 
     private async Task<List<T>> GetWithPaginationAsync<T>(int total, string path) where T : IEntity
