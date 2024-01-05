@@ -28,14 +28,14 @@ using var http = new HttpClient();
 var spaceflightClient = new SpaceflightApiClient(http);
 
 await using var articlesWriter = new FileWriter(articlesFilePath);
-var articles = await spaceflightClient.GetArticlesAsync(100);
+var articles = await spaceflightClient.GetArticlesAsync(123);
 foreach (var article in articles)
 {
     await articlesWriter.WriteAsync(article);
 }
 
 await using var blogsWriter = new FileWriter(blogsFilePath);
-var blogs = await spaceflightClient.GetBlogsAsync(100);
+var blogs = await spaceflightClient.GetBlogsAsync(97);
 foreach (var blog in blogs)
 {
     await blogsWriter.WriteAsync(blog);

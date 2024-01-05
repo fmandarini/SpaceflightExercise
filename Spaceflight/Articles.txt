@@ -1,3 +1,9 @@
+22010 | China completes new commercial launch pad to boost access to space | 05/01/2024
+22009 | RFA Boosts Argo Capabilities to Answer ESA Commercial Cargo Call | 05/01/2024
+22008 | NASA instruments set to fly on Peregrine commercial lunar lander | 05/01/2024
+22007 | GAO denies L3Harris protest over Ball Aerospace weather satellite instrument contract | 05/01/2024
+22006 | Biden Administration to Consult with Navajo About Human Remains on the Moon | 05/01/2024
+22005 | Launch Roundup: Vulcan attempts maiden flight, SpaceX continues launching Starlink | 04/01/2024
 22004 | Space Force wargames potential satellite refueling plans | 04/01/2024
 22003 | Space Force seeking a digital overhaul of its aging launch infrastructure | 04/01/2024
 22001 | Daily Telescope: A view of our star as Earth reaches perihelion | 04/01/2024
@@ -98,3 +104,20 @@
 21895 | Daily Telescope: James Webb zooms in on Uranus | 19/12/2023
 21894 | SpaceX to just miss goal of 100 Falcon launches in 2023 | 19/12/2023
 21893 | Latitude Announces New Variant of its Zephyr Launch Vehicle | 19/12/2023
+21892 | D-Orbit ION Space Tug Hosts In-Orbit Refueling Demo | 19/12/2023
+21889 | After raising $9.5 million, startup OurSky sees strong demand for space data platform | 19/12/2023
+21888 | New Shepard return to flight slips one day | 19/12/2023
+21887 | Lynk Global plans to go public to fund direct-to-smartphone satellites | 18/12/2023
+21886 | Report: Hypersonic weapons challenge Pentagon tracking capabilities | 18/12/2023
+21885 | Spain’s new space agency is a bigger deal than it seems | 18/12/2023
+21883 | Satellite navigation startup TrustPoint announces partnership with SpiderOak | 18/12/2023
+21882 | HawkEye 360 acquires Maxar’s RF Solutions business unit | 18/12/2023
+21881 | Daily Telescope: Tracking the Sun’s path every day across the sky | 18/12/2023
+21880 | Space Force’s first six missile-defense satellites in medium orbit to cost about $500 million | 18/12/2023
+21879 | SaxaVord Spaceport receives U.K. license | 18/12/2023
+21878 | SaxaVord Becomes UK’s First Licensed Vertical Launch Spaceport | 18/12/2023
+21877 | Ariane 6 Upper Stage Test Aborted Prematurely | 18/12/2023
+21875 | SpaceX alums offer telemetry stack through startup Sift | 18/12/2023
+21874 | Blue Origin’s New Shepard returns to flight | 18/12/2023
+21873 | SaxaVord Spaceport Awarded First Vertical Launch Licence in the UK and Western Europe | 17/12/2023
+21872 | What’s Happening in Space Policy December 17-31, 2023 | 17/12/2023

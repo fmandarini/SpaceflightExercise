@@ -95,6 +95,3 @@
 1103 | RocketStars: Engineer moves from aircraft to launching satellites at ULA | 24/08/2023
 1102 | What would happen if an asteroid hit the Moon? | 24/08/2023
 1101 | SILENTBARKER/NROL-107: Payload mounted to Atlas V for launch | 23/08/2023
-1100 | Total solar eclipse 2024: Why it’s worth getting into the path of totality | 22/08/2023
-1098 | Weekly Roundup for SpacePolicyOnline.com: August 14-20, 2023 | 21/08/2023
-1097 | What’s going on with SaxaVord contractors? | 21/08/2023
